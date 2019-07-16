@@ -1,11 +1,11 @@
-require('../db/mongoose')
+require('./db/mongoose')
 const express= require("express")
 const path= require("path")
 const body_parser= require("body-parser")
-const User= require('./models/user')
-const Book= require('./models/book')
-const Loan= require('./models/loan')
-const {auth}= require('./auth')
+const User= require('./src/models/user')
+const Book= require('./src/models/book')
+const Loan= require('./src/models/loan')
+const {auth}= require('./src/auth')
 const cookieSession = require('cookie-session')
 
 
@@ -14,9 +14,9 @@ const cookieSession = require('cookie-session')
 const app= express()
 const port=process.env.PORT || 3000
 
-const imagesDir= path.join(__dirname,'../images')
-const viewDir= path.join(__dirname,'../front') 
-const cssDir= path.join(__dirname,'../css') 
+const imagesDir= path.join(__dirname,'./images')
+const viewDir= path.join(__dirname,'./front') 
+const cssDir= path.join(__dirname,'./css') 
 
 app.use(express.json())
 app.use(body_parser.urlencoded({extended:true}))
