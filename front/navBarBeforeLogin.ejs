@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+     </head>
+     <body>
+            <ul >
+                    <li <% if(active==="home") { %> class="active" <% } %>>
+                        <a href="/">Home</a></li>
+                    <li <% if(active==="registration") { %> class="active" <% } %>>
+                        <a href="/registration">Registration</a></li>
+                        
+                        <li <% if(active==="addBook"){ %> class="active" <% } %>>
+                        <a  href="/addBook"> Add Book</a></li>
+                        <li class="last-child">
+                         <a <% if(active==="deleteBook"){ %> class="active" <% } %> href="/deleteBook"> Delete Book</a></li>
+                         <li  <% if(active==="login") {%> class="active" <% } %> style="float:right">
+                            <a href="/login">Login</a></li>
+            </ul>
+     </body>

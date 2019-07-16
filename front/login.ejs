@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Css1.css" rel="stylesheet" type="text/css"/>
+        <style>
+        body{background-image: url(notebook.png);}
+        
+       </style>
+    </head>
+    <body>
+            <div style="height: 30px"> <%- include('./navBarBeforeLogin.ejs', {active:"login"}) %></div>
+         <h1> login to the library: </h1>
+        
+        
+        <form name="login" action=/usersLogin method="POST">
+            UserName:<br>* <input type="text" name="email" placeholder="UserName" required><br>
+            Password:<br>* <input type="password" name="password" placeholder="password" required><br>
+            *Required<br>
+            <input type="submit" value="login">
+           
+        </form>
+    </body>
+</html>

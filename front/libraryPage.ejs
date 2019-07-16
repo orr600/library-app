@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Library</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Or Amram">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Css1.css" rel="stylesheet" type="text/css"/>
+        <style>
+        body{background-image: url(library.jpg);}
+       </style>
+       
+    </head>
+    
+    <body>
+     <div style="height: 30px"><%- include('./navBarafterLogin.ejs', {active:"me"}) %> </div>
+        <h1 style="text-align: center"> Hello <%=name%> </h1>
+        <h2 style="text-align: center"> Welcome back, Please choose from the options above  </h2>
+    </body>
+</html>

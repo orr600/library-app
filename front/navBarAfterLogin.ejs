@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+     </head>
+     <body>
+            <ul >
+                    <li <% if(active==="me") { %> class="active" <% } %>>
+                        <a href="/libraryPage">Me</a></li>
+                    <li <% if(active==="loanBook") { %> class="active" <% } %>>
+                        <a href="/loanBook">Loan Book</a></li>
+                        
+                        <li <% if(active==="returnBook"){ %> class="active" <% } %>>
+                        <a  href="/returnBooks"> Return Book</a></li>
+                        <li class="last-child">
+                         <a <% if(active==="searchBook"){ %> class="active" <% } %> href="/searchBook"> Search Book</a></li>
+                         <li  <% if(active==="logout") {%> class="active" <% } %> style="float:right">
+                            <a href="/logout" onclick="return confirm('Are you sure you want to logout?')">Logout</a></li>
+            </ul>
+     </body>
+

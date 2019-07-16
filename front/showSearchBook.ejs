@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Css1.css" rel="stylesheet" type="text/css"/>
+         <style>
+        body{background-image: url(notebook.png);}
+        
+         table{width: 400px;text-align:left;font-size:large;font-weight: bold;} 
+         td{ height: 40px;padding: 0 30px 20px 40px;}     
+         th{ height: 40px;padding: 0 0 20px 40px;font-family:arial;font-size: large;font-weight: bold;}</style>
+    </head>
+    <body>
+        <div style="height: 30px"><%- include('./navBarafterLogin.ejs', {active:"searchBook"}) %> </div>
+          
+        
+        <h1> Choose which available Books you want to loan: </h1>
+        
+        
+           <table>
+          <tr>
+            <th><u>Loan</u></th>
+
+            <th><u>Code Num</u></th>
+
+            <th><u>Book Name</u></th>
+
+            <th><u>Author</u></th>
+
+            <th><u>Category</u></th>
+
+            <th><u>Publication Year</u></th>
+
+            <th><u>Cover</u></th></tr>
+           
+          <% for (let b of showBooks){
+              if(!b.isLoan){%>
+          
+          <tr>    
+          <form action="/loanSearchBook" method="POST"> <td> <button type="submit" name="loanBookId" style="background-color:none;"   
+                    value="<%= b._id%>"> <%=b.isbn%> &nbsp <%= b.numOfCopy%> </button> </td> </form>
+           <% }
+           else{ %>
+           <tr>
+               <td><%=b.isbn%> &nbsp; <%= b.numOfCopy%> </td>   
+          <% } %>
+            <td><%= b.numOfCopy%></td>
+            <td><%= b.name%></td>
+            <td><%= b.author%></td>
+            <td><%= b.category%></td>
+            <td><%= b.releaseYear%></td>
+            <td><img src="<%=b.imgSrc%>" alt="Not available" style="height: 100px; width:100px"> </td>
+          <%  if(!b.isLoan){%>
+            <td>Available</td>
+            <% }
+           else{ %>
+            <td style="color: red;">Borrowed</td>
+            <% } %>
+           </tr>
+           <% } %>
+           
+           </table>
+           <button type="button"><a href="/searchBook">Search again</a></button>
+           
+        </div>
+    </body>
+</html>

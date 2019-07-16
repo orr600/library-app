@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Css1.css" rel="stylesheet" type="text/css"/>
+        <style>
+        body{background-image: url(notebook.png);}
+        
+       </style>
+    </head>
+    <body>
+         <div style="height: 30px"><%- include('./navBarBeforeLogin.ejs', {active:"registration"}) %> </div>
+         <h1> Add new student to the library: </h1>
+        
+        
+        <form name="addStudent" action="/users" method="POST">
+            First name:<br>* <input type="text" name="privateName" placeholder="First name" required><br>
+            Last name:<br>* <input type="text" name="familyName" placeholder="Last name" required><br>
+            Password:<br>&nbsp;&nbsp;&nbsp;<input type="password" name="password" placeholder="password" required><br>
+            Id:<br>* <input type="text" name="id" placeholder="id" required><br>
+            Email:<br>* <input type="text" name="email" placeholder="Email" required><br>
+            Gender: *<br>
+                   <input type="radio" name="gender" value="Male" required>Male<br>
+                   <input type="radio" name="gender" value="Female" required>Female<br><br>
+            
+            Birth date:<br> <input type="date" name="BirthDay" min="1970-01-01" max="2080-01-01"><br>
+            Age:<br>* <input type="number" name="age" min="0" max="120" placeholder="Age" required><br><br>
+            *Required<br>
+            
+            <input type="submit" value="Register">
+        </form>
+        
+           
+    </body>
+</html>

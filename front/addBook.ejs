@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Book </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="Css1.css" rel="stylesheet" type="text/css"/>
+         <style>
+             
+        body{background-image: url(notebook.png);}
+       
+        
+       </style>
+      
+       
+         
+    </head>
+    <body>
+        <div style="height: 30px"><%- include('./navBarBeforeLogin.ejs', {active:"addBook"}) %></div>    
+           
+        <h1> Add new Book to the library: </h1>
+        
+        <form name="AddBook" action="/books" method="POST">
+            Book Name:<br>* <input type="text" name="name" size="20" placeholder="Book Name" required><br><br>
+            Author:<br>* <input type="text" name="author" size="20" placeholder="Author" required><br><br>
+            ISBN:<br>* <input type="text" name="isbn" placeholder="ISBN" required><br><br>
+            Category:<br>* <input type="text" name="category" placeholder="Category" required><br><br>
+            Release Year: (Between 1700 and 2018) <br>* <input type="number" name="releaseYear" placeholder="Year" min="1700" max="2018" required><br><br>
+            Number Of Copies:<br>* <input type="number" name="numOfCopies" size="15" min="1" max="100" required><br><br>
+            Image Path:<br> <input type="text" name="imgSrc" placeholder="Image Path"><br><br>
+            *Required<br>
+            <input type="submit" value="Add">  
+            </form>
+           
+            
+       
+    </body>
+</html>

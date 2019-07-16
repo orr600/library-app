@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Css1.css" rel="stylesheet" type="text/css"/>
+         <style>
+        body{background-image: url(notebook.png);}
+        
+         table{width: 400px;text-align:left;font-size:large;font-weight: bold;}       
+         td{ height: 40px;padding: 0 30px 20px 40px;}       
+         th{ height: 40px;padding: 0 0 20px 40px;font-family:arial;font-size: large;font-weight: bold;}  </style>
+   </head>
+    <body>
+        <div style="height: 30px"><%- include('./navBarafterLogin.ejs', {active:"returnBooks"}) %> </div>
+        <h1> Choose which Books you want to return the library: </h1>
+        
+      <form name="ReturnBook" action="/afterReturnBooks"  method="POST">
+<table>
+
+<tr>
+<th><u>Check</u></th>
+
+<th><u>ISBN</u></th>
+
+<th><u>Code Num</u></th>
+
+<th><u>Book Name</u></th>
+
+<th><u>Author</u></th>
+
+<th><u>Category</u></th>
+
+<th><u>Publication Year</u></th>
+
+<th><u>Cover</u></th>
+</tr>
+
+
+            <tr>
+            
+          <% for (let b of books){%>
+          <td><input type="checkbox" name="booksForUser" value="<%= b._id%>"></td>
+          <td><%= b.isbn%></td>
+          <td><%= b.numOfCopy%></td>
+          <td><%= b.name%></td>
+          <td><%= b.author%></td>
+          <td><%= b.category%></td>
+          <td><%= b.releaseYear%></td>
+          <td><img src="<%=b.imgSrc%>" alt="Not available" style="height: 100px; width:100px"> </td>
+            </tr>    
+           <% } %>
+           </table>
+           <input type="submit" value="Return Books"> 
+             </form> 
+           
+    </body>
+</html>
