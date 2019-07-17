@@ -24,7 +24,8 @@ app.use(express.static(imagesDir))
 app.use(express.static(cssDir))
 
 app.use(cookieSession({name: 'session',
-keys: ['key1', 'key2']} 
+keys: ['key1', 'key2'],
+secret:process.env.SESSION_AUTHENTICATION_KEY} 
 ))
 
 
